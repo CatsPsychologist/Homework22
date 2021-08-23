@@ -13,13 +13,13 @@
 //
 // const exampleWithContext = example.bind(someObj, 'string1', 'string2');
 //
-// // console.log(exampleWithContext, typeof(exampleWithContext))
+// console.log(exampleWithContext, typeof(exampleWithContext))
 //
 // exampleWithContext();
 // example();
 // //
 // console.log(exampleWithContext === example)
-//
+
 
 
 let someObj = {
@@ -27,10 +27,21 @@ let someObj = {
     lastName: 'Cat'
 }
 function example(a, b) {
-    console.log(a, b);
+    console.log(this, a, b);
 }
 
+function bind(fn, context, ...rest){
+    return function (){
+        return fn.call(context, ...rest)
+    }
+}
+
+const exampleWithContext = example.bind(someObj, '2', '3');
+
+console.log(exampleWithContext())
+
 // example(2,3)
+
 // let a = this;
 //
 // console.log(a)
