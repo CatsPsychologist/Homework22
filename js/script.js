@@ -40,20 +40,4 @@ const exampleWithContext = example.bind(someObj, '2', '3');
 
 console.log(exampleWithContext())
 
-// example(2,3)
 
-// let a = this;
-//
-// console.log(a)
-//
-// function thisOne(){
-//     console.log(this)
-// }
-//
-// thisOne();
-//
-// function example(a, b) {
-//     console.log(this, a, b);
-// }
-//
-// console.log(example(2, 3));
